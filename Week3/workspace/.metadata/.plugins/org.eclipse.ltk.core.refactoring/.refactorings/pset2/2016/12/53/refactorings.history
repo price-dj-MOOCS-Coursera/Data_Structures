@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;parent&apos; in &apos;MergingTables&apos; to &apos;id&apos;&#x0D;&#x0A;- Original project: &apos;pset2&apos;&#x0D;&#x0A;- Original element: &apos;MergingTables.parent&apos;&#x0D;&#x0A;- Renamed element: &apos;MergingTables.id&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;parent&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;{MergingTables.java[MergingTables^parent" name="id" references="true" setter="false" stamp="1482817631695" textual="false" version="1.0"/>
+</session>

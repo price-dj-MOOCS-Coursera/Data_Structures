@@ -1,0 +1,363 @@
+# python3
+
+from sys import stdin
+from wx import NullAcceleratorTable
+
+# Splay tree implementation
+
+# Vertex of a splay tree
+class Vertex:
+    def __init__(self, key, sum, left, right, parent):
+        (self.key, self.sum, self.left, self.right, self.parent) = (key, sum, left, right, parent)
+
+def update(v):
+    if v == None:
+        return
+    v.sum = v.key + (v.left.sum if v.left != None else 0) + (v.right.sum if v.right != None else 0)
+    if v.left != None:
+        v.left.parent = v
+    if v.right != None:
+        v.right.parent = v
+
+def smallRotation(v):
+    parent = v.parent
+    if parent == None:
+        return
+    grandparent = v.parent.parent
+    if parent.left == v:
+        m = v.right
+        v.right = parent
+        parent.left = m
+    else:
+        m = v.left
+        v.left = parent
+        parent.right = m
+    update(parent)
+    update(v)
+    v.parent = grandparent
+    if grandparent != None:
+        if grandparent.left == parent:
+            grandparent.left = v
+        else: 
+            grandparent.right = v
+
+def bigRotation(v):
+    if v.parent.left == v and v.parent.parent.left == v.parent:
+    # Zig-zig
+        smallRotation(v.parent)
+        smallRotation(v)
+    elif v.parent.right == v and v.parent.parent.right == v.parent:
+    # Zig-zig
+        smallRotation(v.parent)
+        smallRotation(v)    
+    else: 
+    # Zig-zag
+        smallRotation(v)
+        smallRotation(v)
+
+
+
+def splay(v):
+    if v == None:
+        return None
+    while v.parent != None:
+        if v.parent.parent == None:
+            smallRotation(v)
+            break
+        bigRotation(v)
+    return v
+
+
+# Searches for the given key in the tree with the given root
+# and calls splay for the deepest visited node after that.
+# Returns pair of the result and the new root.
+# If found, result is a pointer to the node with the given key.
+# Otherwise, result is a pointer to the node with the smallest
+# bigger key (next value in the order).
+# If the key is bigger than all keys in the tree,
+# then result is None.
+def find(root, key):
+    if root == None:
+        return (None, None) 
+    v = root
+    last = root
+    next = None
+    while v != None:
+        if v.key >= key and (next == None or v.key < next.key):
+            next = v    
+        last = v
+        if v.key == key:
+            break    
+        if v.key < key:
+            v = v.right
+        else: 
+            v = v.left
+    #root = splay(next)      
+    root = splay(last)
+    update(root)
+    return (next, root)
+
+def split(root, key):
+    if root == None:
+        left = None
+        right = None
+        return (left, right) 
+    (result, root) = find(root, key)  
+    if result == None:    
+        return (root, None)  
+    right = splay(result)
+    left = right.left
+    right.left = None
+    if left != None:
+        left.parent = None
+    update(left)
+    update(right)
+    return (left, right)
+
+  
+def merge(left, right):
+    if left == None:
+        return right
+    if right == None:
+        return left
+    while right.left != None:
+        right = right.left
+    right = splay(right)
+    right.left = left
+    update(right)
+    return right
+
+  
+# Code that uses splay tree to solve the problem
+                                    
+root = None
+
+
+def insert(key):
+    global root
+#     if root == None:
+#         root = Vertex(key, key, None, None, None)
+#         return
+    (left, right) = split(root, key)
+    new_vertex = None
+    if right == None or right.key != key:
+        new_vertex = Vertex(key, key, None, None, None)  
+    root = merge(merge(left, new_vertex), right)
+        
+
+  
+
+
+def search(key): 
+    global root
+    if root == None:
+        return False
+    next, root = find(root, key)
+    
+    #self.update(self.root)
+    if next == None:
+        return False
+    elif next.key != key:
+        return False
+    root = splay(next)
+    update(root)
+    return True     
+  
+
+  
+
+def find2(root, key):
+    if root == None:
+        return (None, None) 
+    v = root
+    last = root
+    next = None
+    while v != None:
+        if v.key >= key and (next == None or v.key < next.key):
+            next = v    
+        last = v
+        if v.key == key:
+            break    
+        if v.key < key:
+            v = v.right
+        else: 
+            v = v.left 
+    splay(last)
+    return next   
+
+
+def remove(key):
+    global root
+    if root == None:
+        return
+    next, root = find(root, key)
+    
+    if next != None:
+        
+        if next.key != key:
+            #raise 'key not found in tree'
+            return
+        else:
+            # Now delete the root.
+            root = splay(next)
+            if root.left == None:
+                root = root.right
+                update(root)
+                    
+            else:
+                x = root.right
+                root.left.parent = None
+                root = splay(root.left)
+                root.right = x
+                update(root)     
+        
+def erase(key):
+    global root
+    if root == None:
+        return
+    n, root = find(root, key)
+    if n != None and n.key == key:
+        next, root = find(root, key + 1)
+        if next != None:
+            splay(next)
+            splay(n)
+            n1 = n.left
+            next.left = n1
+            next.parent = None
+            if n1 != None:
+                n1.parent = next
+            root = next
+            update(root)
+            
+        else:
+            splay(n)
+            n1 = n.left
+            root = n1
+            if n1 != None:
+                n1.parent = None
+            splay(root)
+            
+    else:
+        return
+    update(root)      
+            
+        
+
+    
+def dosum(fr, to):
+    global root
+    #print(self.root)
+    if root == None:
+        return 0
+    (left, middle) = split(root, fr)
+    (middle, right) = split(middle, to + 1)
+    ans = 0
+    #update(middle)
+    if middle != None:
+        ans += middle.sum
+    result = merge(left, middle)
+    root = merge(result, right)
+    #update(root)
+    return ans
+
+
+file1 = open("20", "r")
+file2 = open("20.a", "r")
+file3 = open("20.res", "w")
+
+MODULO = 1000000001
+n = int(file1.readline())
+last_sum_result = 0
+for i in range(n):
+    line = file1.readline().split()
+    if line[0] == '+':
+        x = int(line[1])
+        insert((x + last_sum_result) % MODULO)
+    elif line[0] == '-':
+        x = int(line[1])
+        erase((x + last_sum_result) % MODULO)
+    elif line[0] == '?':
+        x = int(line[1])
+        file3.write('Found\n' if search((x + last_sum_result) % MODULO) else 'Not found\n')
+    elif line[0] == 's':
+        l = int(line[1])
+        r = int(line[2])
+        res = dosum((l + last_sum_result) % MODULO, (r + last_sum_result) % MODULO)
+        file3.write(str(res) + "\n")
+        last_sum_result = res % MODULO
+
+
+file3.close()
+
+
+        
+file3 = open("20.res", "r")
+# 
+# line1 = next(file3)
+# 
+# line2 = next(file2)
+# 
+# found_different = False
+# while line1 and line2:
+#     if line1 != line2:
+#         found_different = True
+#         break
+#     line1 = next(file3)
+#     
+#     line2 = next(file2)
+#     
+# 
+# if not line1 and not line2 and not found_different:
+#     pass
+# else:
+#     print("different " + line1 + " " + line2) 
+
+# Read the first line from the files
+f1_line = file3.readline()
+f2_line = file2.readline()
+
+# Initialize counter for line number
+line_no = 1
+match = True
+# Loop if either file1 or file2 has not reached EOF
+while f1_line != '' or f2_line != '':
+
+    # Strip the leading whitespaces
+    f1_line = f1_line.strip()
+    f2_line = f2_line.strip()
+    
+    # Compare the lines from both file
+    if f1_line != f2_line:
+        match = False
+        # If a line does not exist on file2 then mark the output with + sign
+        if f2_line == '' and f1_line != '':
+            print(">+", "Line-%d" % line_no, f1_line)
+        # otherwise output the line on file1 and mark it with > sign
+        elif f1_line != '':
+            print(">", "Line-%d" % line_no, f1_line)
+            
+        # If a line does not exist on file1 then mark the output with + sign
+        if f1_line == '' and f2_line != '':
+            print("<+", "Line-%d" % line_no, f2_line)
+        # otherwise output the line on file2 and mark it with < sign
+        elif f2_line != '':
+            print("<", "Line-%d" %  line_no, f2_line)
+
+        # Print a blank line
+        print()
+    
+
+    #Read the next line from the file
+    f1_line = file3.readline()
+    f2_line = file2.readline()
+
+
+    #Increment line counter
+    line_no += 1
+print(str(match))
+# Close the files
+
+           
+file1.close()
+file2.close()
+file3.close()

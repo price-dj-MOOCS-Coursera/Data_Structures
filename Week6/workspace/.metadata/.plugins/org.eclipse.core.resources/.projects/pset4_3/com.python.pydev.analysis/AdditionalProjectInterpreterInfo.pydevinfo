@@ -1,0 +1,23 @@
+-- VERSION_4
+-- START DISKCACHE_2
+D:\Documents\Dropbox\Coursera\Data_Structures_and_Algorithms\Data_Structures\Week6\workspace\.metadata\.plugins\org.eclipse.core.resources\.projects\pset4_3\com.python.pydev.analysis\v2_indexcache
+rope|1483775920145988000|D:\Documents\Dropbox\Coursera\Data_Structures_and_Algorithms\Data_Structures\Week6\workspace\pset4_3\rope.py
+-- END DISKCACHE
+-- START DICTIONARY
+3
+3=Rope.__init__
+2=Rope
+1=rope
+-- END DICTIONARY
+-- START TREE 1
+2
+q|1|q!11@
+rop|2|rope!11@Rope!9@
+-- END TREE
+-- START TREE 2
+4
+__i|1|__init__!2&10@
+pro|1|process!2&10@
+res|1|result!2&10@
+s|1|s!3&11@
+-- END TREE

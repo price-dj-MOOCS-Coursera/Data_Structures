@@ -1,0 +1,88 @@
+-- VERSION_4
+-- START DISKCACHE_2
+D:\Documents\Dropbox\Coursera\Data_Structures_and_Algorithms\Data_Structures\Week6\workspace\.metadata\.plugins\org.eclipse.core.resources\.projects\pset4\com.python.pydev.analysis\v2_indexcache
+set_range_sum|1483255752000000000|D:\Documents\Dropbox\Coursera\Data_Structures_and_Algorithms\Data_Structures\Week6\workspace\pset4\set_range_sum.py
+splayv9|1483325076000000000|D:\Documents\Dropbox\Coursera\Data_Structures_and_Algorithms\Data_Structures\Week6\workspace\pset4\splayv9.py
+splayv8|1483258447000000000|D:\Documents\Dropbox\Coursera\Data_Structures_and_Algorithms\Data_Structures\Week6\workspace\pset4\splayv8.py
+splayv10testing|1483608102897606000|D:\Documents\Dropbox\Coursera\Data_Structures_and_Algorithms\Data_Structures\Week6\workspace\pset4\splayv10testing.py
+set_range_sumv5_nontesting_forsubmission|1483775110565457000|D:\Documents\Dropbox\Coursera\Data_Structures_and_Algorithms\Data_Structures\Week6\workspace\pset4\set_range_sumv5_nontesting_forsubmission.py
+set_range_sumv3|1483774911582119000|D:\Documents\Dropbox\Coursera\Data_Structures_and_Algorithms\Data_Structures\Week6\workspace\pset4\set_range_sumv3.py
+set_range_sumv2|1483769879894083000|D:\Documents\Dropbox\Coursera\Data_Structures_and_Algorithms\Data_Structures\Week6\workspace\pset4\set_range_sumv2.py
+splayv9testing|1483332683000000000|D:\Documents\Dropbox\Coursera\Data_Structures_and_Algorithms\Data_Structures\Week6\workspace\pset4\splayv9testing.py
+set_range_sumv4|1483774820740982000|D:\Documents\Dropbox\Coursera\Data_Structures_and_Algorithms\Data_Structures\Week6\workspace\pset4\set_range_sumv4.py
+-- END DISKCACHE
+-- START DICTIONARY
+19
+3=set_range_sum
+8=splayv9
+10=Vertex
+9=splayv8
+11=Node
+7=splayv10testing
+19=SplayTree.find1
+5=set_range_sumv3
+1=set_range_sumv2
+12=SplayTree
+17=SplayTree.find
+4=set_range_sumv4
+6=splayv9testing
+18=SplayTree.dosum
+2=set_range_sumv5_nontesting_forsubmission
+16=SplayTree.remove
+13=SplayTree.__init__
+15=SplayTree.insert
+14=SplayTree.splay
+-- END DICTIONARY
+-- START TREE 1
+32
+big|5|bigRotation!10@bigRotation!18@bigRotation!26@bigRotation!34@bigRotation!42@
+del|1|delete!26@
+dos|4|dosum!10@dosum!18@dosum!42@dosum!34@
+era|5|erase!10@erase!18@erase!26@erase!34@erase!42@
+f1_|5|f1_line!51@f1_line!35@f1_line!59@f1_line!43@f1_line!11@
+f2_|5|f2_line!59@f2_line!11@f2_line!43@f2_line!35@f2_line!51@
+fil|15|file3!59@file2!35@file1!51@file3!11@file3!43@file2!59@file3!35@file2!51@file1!35@file2!11@file2!43@file1!11@file1!43@file3!51@file1!59@
+fin|9|find2!34@find2!42@find!10@find!18@find!34@find!42@find2!10@find2!18@find!26@
+ins|5|insert!42@insert!26@insert!34@insert!18@insert!10@
+l|9|l!67@l!35@l!59@l!51@l!27@l!11@l!75@l!43@l!19@
+las|9|last_sum_result!19@last_sum_result!27@last_sum_result!11@last_sum_result!59@last_sum_result!75@last_sum_result!43@last_sum_result!67@last_sum_result!51@last_sum_result!35@
+lef|1|leftDescendant!26@
+lin|14|line!75@line_no!51@line_no!11@line!67@line_no!43@line!11@line!59@line_no!35@line!43@line!19@line_no!59@line!27@line!51@line!35@
+mat|5|match!59@match!11@match!51@match!35@match!43@
+mer|5|merge!10@merge!18@merge!42@merge!34@merge!26@
+mod|9|MODULO!35@MODULO!75@MODULO!27@MODULO!59@MODULO!11@MODULO!19@MODULO!43@MODULO!67@MODULO!51@
+n|9|n!67@n!35@n!27@n!59@n!51@n!11@n!75@n!43@n!19@
+nex|1|nextNode!26@
+nod|4|Node!73@Node!49@Node!57@Node!65@
+r|9|r!19@r!59@r!27@r!11@r!75@r!43@r!67@r!51@r!35@
+rem|3|remove!34@remove!10@remove!42@
+res|9|res!67@res!35@res!27@res!11@res!75@res!43@res!19@res!59@res!51@
+rig|1|rightAncestor!26@
+roo|5|root!27@root!43@root!35@root!11@root!19@
+sea|5|search!34@search!26@search!10@search!18@search!42@
+sma|5|smallRotation!34@smallRotation!42@smallRotation!10@smallRotation!18@smallRotation!26@
+spl|14|split!34@split!42@splay!18@splay!42@splay!10@split!10@splay!34@SplayTree!65@splay!26@SplayTree!73@SplayTree!49@split!26@SplayTree!57@split!18@
+st|4|st!75@st!51@st!59@st!67@
+sum|1|sum!26@
+upd|5|update!10@update!42@update!26@update!34@update!18@
+ver|5|Vertex!41@Vertex!9@Vertex!25@Vertex!33@Vertex!17@
+x|9|x!11@x!75@x!43@x!67@x!51@x!35@x!27@x!19@x!59@
+-- END TREE
+-- START TREE 2
+15
+__i|13|__init__!10&10@__init__!10&42@__init__!10&34@__init__!10&26@__init__!11&74@__init__!12&74@__init__!10&18@__init__!11&66@__init__!12&66@__init__!11&50@__init__!12&50@__init__!11&58@__init__!12&58@
+big|4|bigRotation!12&66@bigRotation!12&74@bigRotation!12&58@bigRotation!12&50@
+dos|4|dosum!12&66@dosum!12&50@dosum!12&74@dosum!12&58@
+equ|4|equals!11&74@equals!11&50@equals!11&58@equals!11&66@
+fin|16|find1!12&66@findMax!12&74@find!12&66@find!12&74@find1!12&74@findMax!12&58@findMin!12&58@findMin!12&50@findMax!12&50@find1!12&50@find1!12&58@find!12&58@find!12&50@findMin!12&66@findMin!12&74@findMax!12&66@
+hea|4|header!13&51@header!13&67@header!13&59@header!13&75@
+ins|4|insert!12&66@insert!12&58@insert!12&74@insert!12&50@
+ise|4|isEmpty!12&50@isEmpty!12&74@isEmpty!12&58@isEmpty!12&66@
+las|2|last_sum_result!13&67@last_sum_result!13&51@
+mer|4|merge!12&74@merge!12&50@merge!12&58@merge!12&66@
+rem|4|remove!12&50@remove!12&58@remove!12&66@remove!12&74@
+roo|27|root!13&59@root!14&59@root!15&59@root!16&59@root!17&59@root!18&59@root!13&75@root!15&75@root!16&75@root!17&75@root!14&75@root!19&75@root!18&75@root!13&51@root!14&51@root!15&51@root!16&51@root!17&51@root!19&51@root!18&51@root!13&67@root!15&67@root!16&67@root!17&67@root!14&67@root!19&67@root!18&67@
+sma|4|smallRotation!12&50@smallRotation!12&74@smallRotation!12&58@smallRotation!12&66@
+spl|9|splay!12&58@split!12&50@splay!12&66@splay!12&74@splay1!12&58@split!12&66@split!12&74@splay!12&50@split!12&58@
+upd|4|update!12&74@update!12&66@update!12&58@update!12&50@
+-- END TREE
